@@ -47,7 +47,7 @@ app.get(
     ytdl(url, {
       quality: quality as string,
       ...(quality.includes("lowest", "highest") ? { filter: "videoandaudio" } : {}),
-    }).pipe(res);
+    }).pipe(res, { end: true });
   })
 );
 
